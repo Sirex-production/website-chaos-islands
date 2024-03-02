@@ -1,0 +1,29 @@
+@use './../../../variables' as variables
+
+.navbar
+    
+    &-container
+        min-height : 100px
+        background-color : variables.$navbar-color
+
+    &-wrapper
+        margin : 0 130px    
+        width : 100%
+
+        &-item
+            display : inline-block
+
+    &-logo
+        width : 135px
+        height : auto        
+    
+    &-brand
+        margin-left: 140px
+
+ 
+
+@media (max-width: variables.$layout-breakpoint-small)
+    .navbar
+
+        &-brand
+            margin-left: 20px

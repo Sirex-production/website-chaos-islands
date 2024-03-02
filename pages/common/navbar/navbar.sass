@@ -1,0 +1,64 @@
+@use './../../../variables' as variables
+
+.navbar
+    position : -webkit-sticky
+    position : sticky
+    top : 0
+    z-index : 1000
+    padding : 0 
+
+    & .nav-link
+        font-size : 24px
+
+    &-nav
+        margin : 0 130px 0 0
+        padding : 0 
+        min-height : 110px  
+        & .nav-link
+            padding : 10px 15px
+        
+        & .nav-item.active 
+            background-color : #4B382E  
+
+            & .nav-link
+                color : #fff 
+                border-radius : 3px
+
+    &-toggler
+        border-color : transparent
+        padding : 6px
+
+        &-icon
+            background-color : #111
+
+    &-container
+        min-height : 100px
+        background-color : variables.$navbar-color
+
+    &-wrapper
+        margin : 0 130px    
+        width : 100%
+
+    &-logo
+        width : 100px
+        height : auto
+    
+    &-brand
+        margin-left : 140px
+
+    & .nav-item
+        padding : 5px 25px 5px 25px
+  
+       
+
+ 
+
+@media (max-width: variables.$layout-breakpoint-small)
+    .navbar
+
+        &-brand
+            margin-left : 50%
+            transform: translateX(-50%)
+
+        &-nav 
+            margin-right : 0
