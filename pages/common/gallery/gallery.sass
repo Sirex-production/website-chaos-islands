@@ -1,0 +1,38 @@
+@use './../../../variables' as variables
+
+.gallery
+    background-color: variables.$second-color
+
+    &-item
+        & h2
+            font-size : 40px
+
+        & p 
+            font-size : 24px  
+
+    &-mid 
+        margin-top : 190px 
+
+        &-container
+            width : 90% 
+            margin : auto 
+
+    &-line
+        height : 5px
+        background-color : variables.$main-font-color
+
+    &-header
+        margin-top : 60px   
+        color : variables.$main-font-color 
+        font-size : 96px
+
+    &-subtitle   
+        color : variables.$second-font-color   
+        font-size : 64px
+
+.soft-image 
+        width : 100%
+        height : 300px
+        border-radius : 20px
+        overflow : hidden
+           
