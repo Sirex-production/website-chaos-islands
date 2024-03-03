@@ -7,6 +7,7 @@ $(() => {
     const about = $("#about").load("./pages/common/about/about.html");
     const contact = $("#contact").load("./pages/common/contact/contact.html");
     const games = $("#games").load("./pages/common/games/games.html");
+    const media = $("#media").load("./pages/common/media/media.html");
 
     about.addClass("hidden");
     contact.addClass("hidden");

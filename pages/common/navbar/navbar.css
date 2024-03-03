@@ -39,7 +39,7 @@
   width: 100%;
 }
 .navbar-logo {
-  width: 100px;
+  width: 130px;
   height: auto;
 }
 .navbar-brand {
@@ -50,6 +50,9 @@
 }
 
 @media (max-width: 960px) {
+  .navbar-logo {
+    margin-top: 10px;
+  }
   .navbar-brand {
     margin-left: 50%;
     transform: translateX(-50%);

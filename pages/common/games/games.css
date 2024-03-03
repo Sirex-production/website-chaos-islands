@@ -14,28 +14,33 @@
   flex-direction: column;
   align-items: center;
 }
-.games-bottom .row .right {
-  transform: translateX(100px);
-}
-.games-bottom .row .left {
-  transform: translateX(100px);
-}
 .games-bottom .col {
   margin: 100px 0;
+}
+.games-bottom .col:last-child {
+  padding-right: 0px;
+}
+.games-bottom .col:first-child {
+  padding-left: 0px;
 }
 .games-bottom .col .soft-image {
   max-width: 800px;
   margin: auto;
+  width: 95%;
 }
 .games-bottom .col p {
   font-size: 24px;
   color: #fff;
   max-width: 800px;
+  width: 95%;
+  margin: auto;
 }
 .games-bottom .col h3 {
   font-size: 48px;
   color: #fff;
   max-width: 800px;
+  width: 95%;
+  margin: auto;
 }
 .games-line {
   height: 5px;
@@ -51,6 +56,21 @@
   font-size: 32px;
   width: 90%;
   margin: auto;
+}
+
+@media (max-width: 960px) {
+  .games .col {
+    padding: 0;
+  }
+  .games .col:first-child {
+    margin: 100px auto 0;
+  }
+  .games .col p {
+    text-align: center;
+  }
+  .games .col h3 {
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=games.css.map */

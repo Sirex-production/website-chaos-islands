@@ -1,7 +1,144 @@
- //carousel
+@use './../../../variables' as variables
 
 .carousel
-    &-item img
+    background-color : variables.$main-color
 
-        width : 620px
-        height : 300px  
+    &-label
+
+        & .container
+            max-width : 500px
+            width : 80% 
+            font-size : 32px
+            color : variables.$main-font-color 
+            margin-top : 10% 
+
+    &-inner
+        //display : flex     
+    
+    &-item 
+        // position : relative        
+        // margin : auto 
+        // display : block
+        // margin : auto
+        // text-align : center
+        // transition : all 0.5s ease
+        //margin-right : 0
+        flex : 0 0 calc( 100%/3)   
+
+        & .soft-image
+            width : 40%
+            height : auto 
+            margin : auto 
+            transition: all 0.5s ease
+        &.active
+            & .soft-image
+                transition: all 0.5s ease
+                width : 80%
+
+        &-left .active, &-rigth .active
+            transition: all 0.5s ease
+
+            & .soft-image
+                transition: all 0.5s ease
+                width : 80%
+
+        &-left &-next, &-rigth &-next
+            transition: all 0.5s ease 
+
+            & .soft-image
+                transition: all 0.5s ease
+                width : 80%
+
+    & .container 
+        padding : 20px
+    
+    &-title
+        text-align : center
+        margin-bottom : 20px
+        
+        & h2
+            color : variables.$main-font-color
+            margin-bottom : 10px
+            padding-top : 100px 
+            font-size : 96px 
+
+        & p
+            font-size : 64px 
+            color : variables.$second-font-color
+            width : 80% 
+            margin : auto 
+
+    &-line 
+        height : 5px
+        background-color : variables.$main-font-color
+        width : 90% 
+        max-width : 1110px 
+
+    &-subtitle
+        font-size : 64px
+        color : variables.$second-font-color
+
+    &-content
+        display : flex
+        justify-content : space-between
+        align-items : center
+        margin-top : 50px
+
+    & .left-text, .right-text
+        flex-basis : 30%
+
+    &-main-image
+        flex-basis : 30%
+        text-align : center
+        transform : translateY(12%) 
+
+        & img 
+            width : 100%
+            display : block
+            margin : 0 auto
+
+    &-body
+        margin-top : 50px
+        text-align : center
+
+    &-item-prev , &-item-next
+        opacity : 0.5
+
+        & img
+            width : 300px
+            height : auto
+            display : block
+            margin : 0 auto
+
+.circular-underline 
+    width : 60%
+    height : 50px
+    background-color : #D9D9D9 
+    padding : 20px 
+    margin : auto 
+    text-align : center  
+    line-height : 100px 
+    border-radius : 50px
+
+@media (max-width: variables.$layout-breakpoint-small)
+    .circular-underline 
+        display : none 
+    .carousel
+        &-main-image
+            display : none 
+
+        &-title
+            & p
+                font-size : 48px 
+                margin : 50px auto 75px
+
+
+        &-label 
+            & .row 
+                width : 90%
+                margin : auto  
+                text-align : center 
+
+                & .container
+                    padding : 0  
+                    width : 90% 

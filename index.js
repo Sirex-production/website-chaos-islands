@@ -7,7 +7,8 @@ $(function () {
     var about = $("#about").load("./pages/common/about/about.html");
     var contact = $("#contact").load("./pages/common/contact/contact.html");
     var games = $("#games").load("./pages/common/games/games.html");
+    var media = $("#media").load("./pages/common/media/media.html");
 
-    about.addClass("hidden");
-    contact.addClass("hidden");
+    //about.addClass("hidden");
+    //contact.addClass("hidden");
 });

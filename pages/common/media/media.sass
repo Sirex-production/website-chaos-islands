@@ -1,0 +1,147 @@
+@use './../../../variables' as variables
+
+.media
+    background-color: variables.$second-color
+    
+    &-container
+        margin : auto 
+        width : 90% 
+    &-header
+        padding-top : 50px 
+        font-size : 128px
+
+    &-bottom
+        margin-bottom : 350px 
+        & .youtube
+            display : block
+            width : 190px
+            height : auto
+            transform : translateY(80%) translateX(5%) 
+
+            & img 
+                width : 190px
+                height : auto
+
+            &-arrow
+                width : 190px 
+                height : auto
+                transform : translateY(300%)  
+
+        & .steam
+            display : block
+            width : 300px
+            height : auto
+            transform : translateY(150%) translateX(-20%)
+            
+            &-arrow
+                display : block 
+                width : 215px
+                height : auto
+                transform : translateY(50%) translateX(10%)
+
+            & img
+                width : 300px
+                height : auto
+
+        & .discord  
+            display : block
+            width : 265px
+            height : auto
+            transform : translateY(-30%) translateX(35%)
+
+            &-arrow
+                display : block 
+                width : 175px
+                height : auto
+                transform : translateY(-30%) translateX(40%)
+
+            & img
+                width : 265px
+                height : auto 
+        & .x
+            display : block
+            width : 65px
+            height : auto
+            transform : translateY(-40%) translateX(165%)
+
+            &-arrow
+                display : block 
+                width : 30px
+                height : auto
+                transform : translateY(-40%) translateX(300%)
+
+            & img
+                width : 65px
+                height : auto
+
+        & .tiktok
+            display : block
+            width : 230px
+            height : auto
+            transform : translateY(-40%) translateX(-45%)
+
+            &-arrow
+                display : block 
+                width : 180px
+                height : auto
+                transform : translateY(-30%) translateX(-30%)
+
+            & img
+                width : 230px
+                height : auto
+        & .col
+             
+            padding : 0 
+            width : 20% 
+            max-width : 20% 
+
+            & .wishlist
+                font-size : 64px
+                color : variables.$main-font-color 
+
+            & .join  
+                color : variables.$main-font-color  
+                font-size : 64px 
+                transform : translateX(-10%)  
+                width : 300px 
+ 
+               
+ 
+
+    &-line
+        height : 5px
+        background-color : variables.$main-font-color
+        margin : 25px 0 50px 0 
+
+    &-header
+        color : variables.$main-font-color 
+        font-size : 96px
+ 
+
+
+@media (max-width: variables.$layout-breakpoint-small)
+    .media
+        & .row 
+            display : block 
+        & .col
+            padding : 0
+            width : 100% 
+            max-width : 100% 
+            margin : 55px auto
+            text-align: center
+            & .steam-arrow, .discord-arrow, .x-arrow, .tiktok-arrow, .youtube-arrow
+                display : none
+
+            & .wishlist
+                display : none
+
+            & .join
+                display : none           
+
+            & .steam, .discord, .x, .tiktok, .youtube
+                transform : translateY(0) translateX(0)
+                display : inline 
+
+        &-bottom
+            margin-bottom : 50px             
+

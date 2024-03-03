@@ -14,30 +14,34 @@
         display : flex
         flex-direction : column
         align-items : center
-         
-        & .row
-            & .right
-                transform : translateX(100px) 
-
-            & .left
-                transform : translateX(100px) 
 
         & .col
             margin : 100px 0
 
+            &:last-child
+                padding-right : 0px 
+
+            &:first-child
+                padding-left : 0px 
+                
             & .soft-image 
                 max-width : 800px 
                 margin : auto 
-                
+                width : 95% 
             & p
                 font-size : 24px
                 color : variables.$main-font-color
                 max-width : 800px 
+                width : 95%
+                margin : auto 
+               
 
             & h3 
                 font-size : 48px     
                 color : variables.$main-font-color
                 max-width : 800px 
+                width : 95% 
+                margin : auto 
 
     &-line
         height : 5px
@@ -53,3 +57,16 @@
         font-size : 32px
         width : 90%
         margin : auto 
+
+
+@media (max-width: variables.$layout-breakpoint-small)
+    .games
+        & .col
+            padding : 0
+
+            &:first-child
+                margin : 100px auto 0
+            & p
+                text-align : center
+            & h3  
+                text-align : center

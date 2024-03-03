@@ -1,0 +1,148 @@
+.media {
+  background-color: #73686c;
+}
+.media-container {
+  margin: auto;
+  width: 90%;
+}
+.media-header {
+  padding-top: 50px;
+  font-size: 128px;
+}
+.media-bottom {
+  margin-bottom: 350px;
+}
+.media-bottom .youtube {
+  display: block;
+  width: 190px;
+  height: auto;
+  transform: translateY(80%) translateX(5%);
+}
+.media-bottom .youtube img {
+  width: 190px;
+  height: auto;
+}
+.media-bottom .youtube-arrow {
+  width: 190px;
+  height: auto;
+  transform: translateY(300%);
+}
+.media-bottom .steam {
+  display: block;
+  width: 300px;
+  height: auto;
+  transform: translateY(150%) translateX(-20%);
+}
+.media-bottom .steam-arrow {
+  display: block;
+  width: 215px;
+  height: auto;
+  transform: translateY(50%) translateX(10%);
+}
+.media-bottom .steam img {
+  width: 300px;
+  height: auto;
+}
+.media-bottom .discord {
+  display: block;
+  width: 265px;
+  height: auto;
+  transform: translateY(-30%) translateX(35%);
+}
+.media-bottom .discord-arrow {
+  display: block;
+  width: 175px;
+  height: auto;
+  transform: translateY(-30%) translateX(40%);
+}
+.media-bottom .discord img {
+  width: 265px;
+  height: auto;
+}
+.media-bottom .x {
+  display: block;
+  width: 65px;
+  height: auto;
+  transform: translateY(-40%) translateX(165%);
+}
+.media-bottom .x-arrow {
+  display: block;
+  width: 30px;
+  height: auto;
+  transform: translateY(-40%) translateX(300%);
+}
+.media-bottom .x img {
+  width: 65px;
+  height: auto;
+}
+.media-bottom .tiktok {
+  display: block;
+  width: 230px;
+  height: auto;
+  transform: translateY(-40%) translateX(-45%);
+}
+.media-bottom .tiktok-arrow {
+  display: block;
+  width: 180px;
+  height: auto;
+  transform: translateY(-30%) translateX(-30%);
+}
+.media-bottom .tiktok img {
+  width: 230px;
+  height: auto;
+}
+.media-bottom .col {
+  padding: 0;
+  width: 20%;
+  max-width: 20%;
+}
+.media-bottom .col .wishlist {
+  font-size: 64px;
+  color: #fff;
+}
+.media-bottom .col .join {
+  color: #fff;
+  font-size: 64px;
+  transform: translateX(-10%);
+  width: 300px;
+}
+.media-line {
+  height: 5px;
+  background-color: #fff;
+  margin: 25px 0 50px 0;
+}
+.media-header {
+  color: #fff;
+  font-size: 96px;
+}
+
+@media (max-width: 960px) {
+  .media .row {
+    display: block;
+  }
+  .media .col {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 55px auto;
+    text-align: center;
+  }
+  .media .col .steam-arrow, .media .col .discord-arrow, .media .col .x-arrow, .media .col .tiktok-arrow, .media .col .youtube-arrow {
+    display: none;
+  }
+  .media .col .wishlist {
+    display: none;
+  }
+  .media .col .join {
+    display: none;
+  }
+  .media .col .steam, .media .col .discord, .media .col .x, .media .col .tiktok, .media .col .youtube {
+    transform: translateY(0) translateX(0);
+    display: inline;
+  }
+  .media-bottom {
+    margin-bottom: 50px;
+  }
+}
+
+/*# sourceMappingURL=media.css.map */
