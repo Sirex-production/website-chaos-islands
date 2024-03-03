@@ -1,29 +1,45 @@
 @use './../../../variables' as variables
 
-.navbar
-    
+.contact 
+    background-color : variables.$second-color
+
     &-container
-        min-height : 100px
-        background-color : variables.$navbar-color
+        margin : 0 auto
+        text-align : center
 
-    &-wrapper
-        margin : 0 130px    
-        width : 100%
+    &-top
+        width : 80%
+        display : inline-block 
 
-        &-item
-            display : inline-block
+    &-line
+        height : 5px
+        background-color : variables.$main-font-color
+        margin : 25px 0 50px 0 
 
-    &-logo
-        width : 135px
-        height : auto        
+    &-header
+        margin-top : 60px   
+        color : variables.$main-font-color 
+        font-size : 96px
+        margin-top : 120px 
+
+    &-text   
+        color : variables.$main-font-color   
+        font-size : 32px
+        margin-bottom : 130px 
     
-    &-brand
-        margin-left: 140px
+    &-bottom
 
- 
+        padding-bottom : 150px
+
+        & a 
+            text-decoration : none
+            color : variables.$main-font-color   
+        & img
+            width : 60%
+            height : auto 
 
 @media (max-width: variables.$layout-breakpoint-small)
-    .navbar
-
-        &-brand
-            margin-left: 20px
+    .contact
+        &-bottom
+            & h2
+                padding: 35px 0

@@ -5,7 +5,8 @@ $(() => {
     const carausel = $("#carousel").load("./pages/common/carousel/carousel.html");
     const footer = $("#footer").load("./pages/common/footer/footer.html");
     const about = $("#about").load("./pages/common/about/about.html");
+    const contact = $("#contact").load("./pages/common/contact/contact.html");
 
-    about.addClass("hidden")
+    about.addClass("hidden");
     
 });
