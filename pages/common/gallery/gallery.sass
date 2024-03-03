@@ -2,13 +2,26 @@
 
 .gallery
     background-color: variables.$second-color
-
+    
+    &-header
+        padding-top : 50px 
+    
+    &-top
+        margin-top : 50px 
     &-item
         & h2
             font-size : 40px
+            color : variables.$main-font-color
+            margin-top : 50px 
 
         & p 
             font-size : 24px  
+            color : #000
+            margin-top : 30px 
+
+        &-content
+            width : 70% 
+            margin : auto    
 
     &-mid 
         margin-top : 190px 
@@ -16,6 +29,12 @@
         &-container
             width : 90% 
             margin : auto 
+
+    &-bottom
+        margin : auto
+        display : flex
+        flex-direction : column
+        align-items : center
 
     &-line
         height : 5px
@@ -31,8 +50,61 @@
         font-size : 64px
 
 .soft-image 
-        width : 100%
-        height : 300px
-        border-radius : 20px
-        overflow : hidden
-           
+    width : 100%
+    max-width : 100%
+    height : auto
+    border-radius : 20px
+    overflow : hidden
+    border-radius : 10px
+    box-shadow : -5px 5px 5px 5px rgba(48, 47, 47, 0.5)
+
+    & img 
+        max-width : 100%
+        height: auto
+
+.circular-button 
+    display : inline-block
+    padding : 0px 40px
+    border : 7px solid variables.$main-font-color
+    border-radius : 50px
+    color : variables.$main-font-color
+    text-align : center
+    text-decoration : none
+    font-size : 48px
+    cursor : pointer
+    transition : background-position 0.5s, color 0.5s
+    margin : 10px 0 
+
+    &:last-child
+        margin-bottom : 100px     
+
+    &-top
+        background : linear-gradient(to top, transparent 50%, #fff 50%)
+        background-size : 100% 200%
+        background-position : 0 100%
+
+        &:hover
+            background-position : 0 0
+            color : variables.$second-font-color
+    
+    &-bottom  
+        background : linear-gradient(to bottom, transparent 0%, transparent 50%, #fff 50%, #fff 100%)
+        background-size : 100% 200%
+        background-position : 0 100%  
+        color : variables.$second-font-color
+
+        &:hover
+            background-position : 0 0
+            color : variables.$main-font-color
+
+
+@media (max-width: variables.$layout-breakpoint-small)
+    .gallery
+        &-mid  
+            margin-top : 80px 
+            & .col 
+                margin-bottom : 50px 
+
+    .circular-button 
+        &:last-child
+            margin-bottom : 100px 
