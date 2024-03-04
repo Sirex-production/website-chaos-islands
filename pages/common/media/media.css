@@ -1,6 +1,9 @@
 .media {
   background-color: #73686c;
 }
+.media-icon img.hovered {
+  opacity: 0;
+}
 .media-container {
   margin: auto;
   width: 90%;
@@ -17,6 +20,7 @@
   width: 190px;
   height: auto;
   transform: translateY(80%) translateX(5%);
+  transition: opacity 0.5s ease;
 }
 .media-bottom .youtube img {
   width: 190px;
@@ -32,6 +36,7 @@
   width: 300px;
   height: auto;
   transform: translateY(150%) translateX(-20%);
+  transition: opacity 0.5s ease;
 }
 .media-bottom .steam-arrow {
   display: block;
@@ -48,6 +53,7 @@
   width: 265px;
   height: auto;
   transform: translateY(-30%) translateX(35%);
+  transition: opacity 0.5s ease;
 }
 .media-bottom .discord-arrow {
   display: block;
@@ -64,6 +70,7 @@
   width: 65px;
   height: auto;
   transform: translateY(-40%) translateX(165%);
+  transition: opacity 0.5s ease;
 }
 .media-bottom .x-arrow {
   display: block;
@@ -80,6 +87,7 @@
   width: 230px;
   height: auto;
   transform: translateY(-40%) translateX(-45%);
+  transition: opacity 0.5s ease;
 }
 .media-bottom .tiktok-arrow {
   display: block;

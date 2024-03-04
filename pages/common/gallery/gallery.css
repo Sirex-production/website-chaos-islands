@@ -54,7 +54,7 @@
   height: auto;
   border-radius: 20px;
   overflow: hidden;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: -5px 5px 5px 5px rgba(48, 47, 47, 0.5);
 }
 .soft-image img {
@@ -98,6 +98,37 @@
   color: #fff;
 }
 
+.box {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 1.4px 1.7px rgba(0, 0, 0, 0.017), 0 3.3px 4px rgba(0, 0, 0, 0.024), 0 6.3px 7.5px rgba(0, 0, 0, 0.03), 0 11.2px 13.4px rgba(0, 0, 0, 0.036), 0 20.9px 25.1px rgba(0, 0, 0, 0.043), 0 50px 60px rgba(0, 0, 0, 0.06);
+}
+
+.zoom-in p {
+  position: absolute;
+  left: 1%;
+  text-align: center;
+  bottom: 1%;
+  transition: all 0.3s ease;
+  transform: scale(1.8);
+  opacity: 0;
+  color: #3A3A3A;
+  font-size: 3vw;
+}
+.zoom-in img {
+  transition: all 0.3s ease;
+}
+.zoom-in:hover img {
+  transform: scale(1.1);
+  filter: grayscale(100%);
+}
+.zoom-in:hover p {
+  transform: scale(1);
+  transition: all 0.3s ease;
+  opacity: 1;
+}
+
 @media (max-width: 960px) {
   .gallery-mid {
     margin-top: 80px;
@@ -107,6 +138,9 @@
   }
   .circular-button:last-child {
     margin-bottom: 100px;
+  }
+  .zoom-in p {
+    font-size: 32px;
   }
 }
 

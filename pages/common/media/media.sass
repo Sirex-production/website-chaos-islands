@@ -1,8 +1,12 @@
-@use './../../../variables' as variables
+@use './../../../variables' as variablescol
 
 .media
-    background-color: variables.$second-color
+    background-color : variables.$second-color
     
+    &-icon
+        & img 
+            &.hovered
+                opacity : 0
     &-container
         margin : auto 
         width : 90% 
@@ -17,6 +21,7 @@
             width : 190px
             height : auto
             transform : translateY(80%) translateX(5%) 
+            transition : opacity 0.5s ease
 
             & img 
                 width : 190px
@@ -32,7 +37,8 @@
             width : 300px
             height : auto
             transform : translateY(150%) translateX(-20%)
-            
+            transition : opacity 0.5s ease
+
             &-arrow
                 display : block 
                 width : 215px
@@ -48,6 +54,7 @@
             width : 265px
             height : auto
             transform : translateY(-30%) translateX(35%)
+            transition : opacity 0.5s ease
 
             &-arrow
                 display : block 
@@ -63,6 +70,7 @@
             width : 65px
             height : auto
             transform : translateY(-40%) translateX(165%)
+            transition : opacity 0.5s ease
 
             &-arrow
                 display : block 
@@ -79,6 +87,7 @@
             width : 230px
             height : auto
             transform : translateY(-40%) translateX(-45%)
+            transition : opacity 0.5s ease
 
             &-arrow
                 display : block 
