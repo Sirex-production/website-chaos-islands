@@ -52,6 +52,7 @@
 @media (max-width: 960px) {
   .navbar-logo {
     margin-top: 10px;
+    width: 100px;
   }
   .navbar-brand {
     margin-left: 50%;

@@ -60,7 +60,11 @@
 
     & img 
         max-width : 100%
-        height: auto
+        height : auto
+
+    & video 
+        max-width : 100%
+        height : auto
 
 .circular-button 
     display : inline-block
@@ -104,16 +108,22 @@
     box-shadow  : 0 1.4px 1.7px rgba(0, 0, 0, 0.017), 0 3.3px 4px rgba(0, 0, 0, 0.024),0 6.3px 7.5px rgba(0, 0, 0, 0.03),0 11.2px 13.4px rgba(0, 0, 0, 0.036),0 20.9px 25.1px rgba(0, 0, 0, 0.043),0 50px 60px rgba(0, 0, 0, 0.06)
 
 .zoom-in
+    
     & p
         position : absolute
         left : 1%
         text-align : center 
-        bottom:  1%
+        bottom :  1%
         transition : all .3s ease
-        transform : scale(1.8)
+        transform : scale(0.1)
         opacity : 0
-        color : variables.$second-font-color
+        color : variables.$main-font-color
+        text-shadow : 3px 3px 3px variables.$second-font-color
         font-size : 3vw
+
+    & video 
+        transition : all .3s ease  
+
     & img 
         transition : all .3s ease  
 
@@ -121,6 +131,11 @@
         & img
             transform : scale(1.1)
             filter : grayscale(100%)
+
+        & video
+            transform : scale(1.1)
+            filter : grayscale(100%)
+        
         & p
             transform : scale(1)
             transition : all .3s ease

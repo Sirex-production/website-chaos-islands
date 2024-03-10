@@ -118,6 +118,8 @@
   height: 5px;
   background-color: #fff;
   margin: 25px 0 50px 0;
+  max-width : 1110px;
+  margin: 25px auto 50px ;
 }
 .media-header {
   color: #fff;
