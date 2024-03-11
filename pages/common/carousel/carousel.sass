@@ -3,6 +3,8 @@
 .carousel
     background-color : variables.$main-color
 
+    &-wrapper
+        width: 95%
     &-label
 
         & .container
@@ -17,7 +19,6 @@
     
     &-item 
         // position : relative        
-        // margin : auto 
         // display : block
         // margin : auto
         // text-align : center
@@ -85,7 +86,7 @@
         justify-content : space-between
         align-items : center
         margin-top : 50px
-
+        
     & .left-text, .right-text
         flex-basis : 30%
 
@@ -111,7 +112,54 @@
             height : auto
             display : block
             margin : 0 auto
+    
+    & .slider
 
+        &-body
+            
+            
+        white-space : nowrap
+        display : inline
+        overflow : hidden
+        scroll-behavior : smooth
+        &-arrow
+            background-color : rgba(255, 255, 255, 0)
+            bottom :  0
+            height : 150px
+            width : auto  
+            position : absolute
+            transform : translateY(-75%)
+
+            & img 
+                height : 11vh
+                width : auto  
+                bottom: 0 
+             
+            &:last-child 
+                right : 25px
+            &:first-child
+                left : 25px
+        &-wrapper
+            white-space : nowrap
+            overflow : hidden
+            scroll-behavior : smooth
+
+        & .soft-image
+            display : inline-block
+            height : auto
+            object-fit :  cover
+            width : calc( 100% / 3  )
+            transition :  1.3s ease
+
+            & img 
+            
+            &:first-child
+                opacity: 0
+            &:last-child
+                opacity: 0
+          
+            
+    
 .circular-underline 
     width : 60%
     height : 50px
@@ -159,12 +207,19 @@
     .circular-underline 
         display : none 
     .carousel
+
+        & .slider
+            & .soft-image
+                width : calc( 100% / 1  )
         &-main-image
             display : none 
 
         &-title
-            & p
+            & h2 
                 font-size : 48px 
+            
+            & p
+                font-size : 32px 
                 margin : 50px auto 75px
 
 

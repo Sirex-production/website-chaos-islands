@@ -1,6 +1,9 @@
 .carousel {
   background-color: #BC9585;
 }
+.carousel-wrapper {
+  width: 95%;
+}
 .carousel-label .container {
   max-width: 500px;
   width: 80%;
@@ -97,6 +100,49 @@
   display: block;
   margin: 0 auto;
 }
+.carousel .slider {
+  white-space: nowrap;
+  display: inline;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.carousel .slider-arrow {
+  background-color: rgba(255, 255, 255, 0);
+  bottom: 0;
+  height: 150px;
+  width: auto;
+  position: absolute;
+  transform: translateY(-75%);
+}
+.carousel .slider-arrow img {
+  height: 11vh;
+  width: auto;
+  bottom: 0;
+}
+.carousel .slider-arrow:last-child {
+  right: 25px;
+}
+.carousel .slider-arrow:first-child {
+  left: 25px;
+}
+.carousel .slider-wrapper {
+  white-space: nowrap;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.carousel .slider .soft-image {
+  display: inline-block;
+  height: auto;
+  object-fit: cover;
+  width: 33.3333333333%;
+  transition: 1.3s ease;
+}
+.carousel .slider .soft-image:first-child {
+  opacity: 0;
+}
+.carousel .slider .soft-image:last-child {
+  opacity: 0;
+}
 
 .circular-underline {
   width: 60%;
@@ -144,11 +190,17 @@
   .circular-underline {
     display: none;
   }
+  .carousel .slider .soft-image {
+    width: 100%;
+  }
   .carousel-main-image {
     display: none;
   }
-  .carousel-title p {
+  .carousel-title h2 {
     font-size: 48px;
+  }
+  .carousel-title p {
+    font-size: 32px;
     margin: 50px auto 75px;
   }
   .carousel-label .row {

@@ -6,6 +6,7 @@ function initNavbar() {
     const navGames = $('#nav-games');
     const navAbout = $('#nav-about');
     const navContact = $('#nav-contact');
+    const navLogo= $('#nav-logo');
 
     const jumbotron = $('#jumbotron');
     const media = $('#media');
@@ -14,6 +15,10 @@ function initNavbar() {
     const contact = $('#contact');
     const games = $('#games');
     const about = $('#about');
+
+    navLogo.on('click', function () {
+        showMainPage()
+    });
 
     navPress.on('click', function () {
         //showMainPage();

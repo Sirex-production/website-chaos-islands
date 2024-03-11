@@ -1,4 +1,4 @@
-@use './../../../variables' as variablescol
+@use './../../../variables' as variables
 
 .media
     background-color : variables.$second-color
@@ -131,6 +131,9 @@
 
 @media (max-width: variables.$layout-breakpoint-small)
     .media
+        &-top
+            h1
+                font-size: 48px 
         & .row 
             display : block 
         & .col
@@ -151,7 +154,9 @@
             & .steam, .discord, .x, .tiktok, .youtube
                 transform : translateY(0) translateX(0)
                 display : inline 
-
+                width : 90%
+                height : auto 
+                
         &-bottom
             margin-bottom : 50px             
 

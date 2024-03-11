@@ -118,8 +118,8 @@
   height: 5px;
   background-color: #fff;
   margin: 25px 0 50px 0;
-  max-width : 1110px;
-  margin: 25px auto 50px ;
+  max-width: 1110px;
+  margin: 25px auto 50px;
 }
 .media-header {
   color: #fff;
@@ -127,6 +127,9 @@
 }
 
 @media (max-width: 960px) {
+  .media-top h1 {
+    font-size: 48px;
+  }
   .media .row {
     display: block;
   }
@@ -149,6 +152,8 @@
   .media .col .steam, .media .col .discord, .media .col .x, .media .col .tiktok, .media .col .youtube {
     transform: translateY(0) translateX(0);
     display: inline;
+    width: 90%;
+    height: auto;
   }
   .media-bottom {
     margin-bottom: 50px;

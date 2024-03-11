@@ -142,6 +142,13 @@
 }
 
 @media (max-width: 960px) {
+  .gallery-top h1{
+    font-size : 48px;
+  }
+
+  .gallery-top h3{
+    font-size : 32px;
+  }
   .gallery-mid {
     margin-top: 80px;
   }
