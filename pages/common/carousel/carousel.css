@@ -1,8 +1,50 @@
+.overlay-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  margin: auto;
+  transition: all 0.3s ease;
+}
+
 .carousel {
   background-color: #BC9585;
 }
+.carousel-bottom {
+  height: 300px;
+  background-color: #BC9585;
+  padding-top: 75px;
+  position: relative;
+}
+.carousel-bottom .container {
+  width: 40%;
+  min-width: 300px;
+}
+.carousel-bottom .dotted-text {
+  font-size: 32px;
+  color: #fff;
+  display: inline-block;
+  position: relative;
+}
+.carousel-bottom .dotted-text p {
+  display: inline-block;
+}
+.carousel-bottom .circle {
+  width: 25px;
+  height: 25px;
+  background-color: #D9D9D9;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 25px;
+  position: absolute;
+  transform: translateY(50%) translateX(-75px);
+  top: calc(50% - 50px);
+  left: 0;
+}
 .carousel-wrapper {
   width: 95%;
+  margin : auto;
 }
 .carousel-label .container {
   max-width: 500px;
@@ -109,15 +151,16 @@
 .carousel .slider-arrow {
   background-color: rgba(255, 255, 255, 0);
   bottom: 0;
-  height: 150px;
+  height: 30%;
   width: auto;
   position: absolute;
-  transform: translateY(-75%);
+  width: 35%;
 }
 .carousel .slider-arrow img {
   height: 11vh;
   width: auto;
-  bottom: 0;
+  margin-bottom: 1px;
+  opacity: 0;
 }
 .carousel .slider-arrow:last-child {
   right: 25px;
@@ -136,6 +179,14 @@
   object-fit: cover;
   width: 33.3333333333%;
   transition: 1.3s ease;
+}
+.carousel .slider .soft-image img.overlay-img {
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 40px);
+  width: auto;
+  height: 150px;
+  margin: auto;
 }
 .carousel .slider .soft-image:first-child {
   opacity: 0;
@@ -187,6 +238,12 @@
   }
 }
 @media (max-width: 960px) {
+  .slider .soft-image img.overlay-img {
+    display: none;
+  }
+  .circle {
+    display: none;
+  }
   .circular-underline {
     display: none;
   }

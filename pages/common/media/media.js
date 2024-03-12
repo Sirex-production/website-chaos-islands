@@ -58,11 +58,11 @@
         });
     }
 
-    doAnimateHover("steam", "./../../../resource/icons/steam_c.png", "./../../../resource/icons/steam.png");
-    doAnimateHover("discord", "./../../../resource/icons/discord_color.png", "./../../../resource/icons/discord-logo-white.png");
-    doAnimateHover("x", "./../../../resource/icons/x_c.png", "./../../../resource/icons/X_logo_2023_(white).png");
-    doAnimateHover("tiktok", "./../../../resource/icons/tiktok_color.png", "./../../../resource/icons/tiktok.png");
-    doAnimateHover("youtube", "./../../../resource/icons/yotube_color.png", "./../../../resource/icons/yotube_white.png");
+    doAnimateHover("steam", "resource/icons/steam_c.png", "resource/icons/steam.png");
+    doAnimateHover("discord", "resource/icons/discord_color.png", "resource/icons/discord-logo-white.png");
+    doAnimateHover("x", "resource/icons/x_c.png", "resource/icons/X_logo_2023_(white).png");
+    doAnimateHover("tiktok", "resource/icons/tiktok_color.png", "resource/icons/tiktok.png");
+    doAnimateHover("youtube", "resource/icons/yotube_color.png", "resource/icons/yotube_white.png");
  
  }
 

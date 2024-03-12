@@ -1,10 +1,45 @@
 @use './../../../variables' as variables
 
+.overlay-img 
+    position : absolute
+    top : 0
+    left : 0
+    width : 100%
+    height : 150px
+    margin : auto
+    transition : all 0.3s ease
 .carousel
     background-color : variables.$main-color
 
+    &-bottom
+        height : 300px 
+        background-color : variables.$main-color
+        padding-top : 75px
+        position : relative
+        & .container
+            width : 40% 
+            min-width : 300px  
+        & .dotted-text
+            font-size : 32px
+            color : variables.$main-font-color 
+            display : inline-block
+            position : relative
+            & p 
+                display : inline-block
+        & .circle 
+            width : 25px  
+            height : 25px
+            background-color : #D9D9D9
+            border-radius : 50% 
+            display : inline-block
+            margin-right : 25px 
+            position : absolute  
+            transform : translateY(50%) translateX( -75px)
+            top : calc( 50% - 50px)
+            left : 0
+
     &-wrapper
-        width: 95%
+        width : 95%
     &-label
 
         & .container
@@ -28,27 +63,28 @@
 
         
         & .soft-image
+
             width : 40%
             height : auto 
             margin : auto 
-            transition: all 0.5s ease
+            transition : all 0.5s ease
         &.active
             & .soft-image
-                transition: all 0.5s ease
+                transition : all 0.5s ease
                 width : 80%
 
         &-left .active, &-rigth .active
-            transition: all 0.5s ease
+            transition : all 0.5s ease
 
             & .soft-image
-                transition: all 0.5s ease
+                transition : all 0.5s ease
                 width : 80%
 
         &-left &-next, &-rigth &-next
-            transition: all 0.5s ease 
+            transition : all 0.5s ease 
 
             & .soft-image
-                transition: all 0.5s ease
+                transition : all 0.5s ease
                 width : 80%
 
     & .container 
@@ -115,7 +151,7 @@
     
     & .slider
 
-        &-body
+        // &-body
             
             
         white-space : nowrap
@@ -125,18 +161,20 @@
         &-arrow
             background-color : rgba(255, 255, 255, 0)
             bottom :  0
-            height : 150px
+            height : 30%
             width : auto  
             position : absolute
-            transform : translateY(-75%)
+            width : 35%
 
             & img 
                 height : 11vh
                 width : auto  
-                bottom: 0 
+                margin-bottom : 1px 
+                opacity : 0 
              
             &:last-child 
                 right : 25px
+                 
             &:first-child
                 left : 25px
         &-wrapper
@@ -151,7 +189,13 @@
             width : calc( 100% / 3  )
             transition :  1.3s ease
 
-            & img 
+            & img.overlay-img 
+                position : absolute
+                top : calc( 50% - 75px)
+                left : calc( 50% - 40px)
+                width :  auto
+                height : 150px
+                margin : auto 
             
             &:first-child
                 opacity: 0
@@ -203,7 +247,14 @@
   
 
 
+
 @media (max-width: variables.$layout-breakpoint-small)
+    .slider 
+        & .soft-image
+            & img.overlay-img 
+                display: none
+    .circle
+        display : none 
     .circular-underline 
         display : none 
     .carousel

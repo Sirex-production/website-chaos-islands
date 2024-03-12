@@ -66,6 +66,7 @@ function initCarousel() {
 
     function initSlider(){
       const carousel = document.querySelector(".slider-wrapper");
+      const carouselBody = document.querySelector(".slider-body");
       const arrowLeft = document.querySelector("#slider-prev");
       const arrowRight = document.querySelector("#slider-next");
       const images = document.querySelectorAll('.slider-soft-image');
@@ -74,12 +75,14 @@ function initCarousel() {
 
       //touch
       carousel.addEventListener("touchstart", function(e) {
+        return;
         isDragging = true;
         prevScrollLeft = carousel.scrollLeft;
         prevPageX = e.touches[0].pageX;  
       });
       
       carousel.addEventListener("touchmove", function(e) {
+        return;
         if (!isDragging)
             return;
     
@@ -91,12 +94,14 @@ function initCarousel() {
       });
 
       carousel.addEventListener("touchend", function(e) {
+        return;
         isDragging = false;
         carousel.classList.remove('dragging');
       });
 
       //mouse
       carousel.addEventListener("mouseup", function(e){
+        return;
         isDragging = false;
         carousel.classList.remove('dragging')
 
@@ -109,12 +114,14 @@ function initCarousel() {
       });
 
       carousel.addEventListener("mousedown", function(e){
+        return;
         isDragging = true;
         prevScrollLeft = carousel.scrollLeft
         prevPageX = e.pageX
       });
 
       carousel.addEventListener("mousemove", function(e){
+        return;
         if(!isDragging)
           return;
 
@@ -123,11 +130,82 @@ function initCarousel() {
         carousel.classList.add('dragging')
         carousel.scrollLeft = prevScrollLeft - deltaPos
 
-       
-        
+      
+      });
+
+      carouselBody.addEventListener("mouseover", function(e) {
+          images.forEach((image, index) => {
+
+          
+              let leftChild = image.querySelector('.left');
+              let rightChild = image.querySelector('.right');
+              let middleImageIndex = getMiddleImageIndex();
+
+              //left
+              
+              if(index + 1 == middleImageIndex){
+  
+                if(leftChild != null)
+                  leftChild.style.opacity = 1;
+    
+                if(rightChild != null)
+                  rightChild.style.opacity = 0;
+                  
+              }
+             
+              //right
+              else if(index - 1 == middleImageIndex){
+                if(leftChild != null)
+                  leftChild.style.opacity = 0;
+    
+                if(rightChild != null)
+                  rightChild.style.opacity = 1;
+              }
+              //none
+              else{
+                if(leftChild != null)
+                  leftChild.style.opacity = 0;
+    
+                if(rightChild != null)
+                  rightChild.style.opacity = 0;
+              }
+
+          });
+      });
+
+      function hideArrows(){
+        images.forEach((image)=>{
+
+ 
+          let leftChild = image.querySelector('.left');
+          let rightChild = image.querySelector('.right');
+     
+          if(leftChild != null)
+            leftChild.style.opacity = 0;
+
+          if(rightChild != null)
+            rightChild.style.opacity = 0;
+        })
+      }
+
+      carouselBody.addEventListener("mouseout", function(e) {
+        images.forEach((image)=>{
+
+ 
+          let leftChild = image.querySelector('.left');
+          let rightChild = image.querySelector('.right');
+     
+          if(leftChild != null)
+            leftChild.style.opacity = 0;
+
+          if(rightChild != null)
+            rightChild.style.opacity = 0;
+        })
       });
 
       //universal
+
+
       arrowLeft.addEventListener("click", function(){
         const middleImageIndex = getMiddleImageIndex();
         const middleImage = images[middleImageIndex];
@@ -162,9 +240,9 @@ function initCarousel() {
       function getMiddleImageIndex() {
         const slider = document.querySelector('.slider-wrapper');
        
-        const sliderRect = slider.getBoundingClientRect();
-        const sliderScrollLeft = slider.scrollLeft;
-        const sliderMiddleX = sliderScrollLeft + (sliderRect.width / 2);
+        let sliderRect = slider.getBoundingClientRect();
+        let sliderScrollLeft = slider.scrollLeft;
+        let sliderMiddleX = sliderScrollLeft + (sliderRect.width / 2);
     
         let middleImageIndex = -1;
         let minDistance = Infinity;
@@ -185,21 +263,56 @@ function initCarousel() {
   
       function scaleMiddleImage() {
         const middleImageIndex = getMiddleImageIndex();
-        
+      
         images.forEach((image, index) => {
+
             if (index === middleImageIndex) {
                 
                 image.style.transform = 'scale(1)'; 
                 image.style.opacity = '1';
+
+                 
             } else {
                 image.style.transform = 'scale(0.6)';  
                 image.style.opacity = '0.7';
             }
 
-            
             if(index == 0 || index == images.length-1 ){
               image.style.opacity = '0.0';
             }
+            
+            let leftChild = image.querySelector('.left');
+            let rightChild = image.querySelector('.right');
+            //todo
+            //left
+    
+            if(index + 1 == middleImageIndex){
+
+              if(leftChild != null)
+                leftChild.style.opacity = 1;
+  
+              if(rightChild != null)
+                rightChild.style.opacity = 0;
+                
+            }
+           
+            //right
+            else if(index - 1 == middleImageIndex){
+              if(leftChild != null)
+                leftChild.style.opacity = 0;
+  
+              if(rightChild != null)
+                rightChild.style.opacity = 1;
+            }
+            //none
+            else{
+              if(leftChild != null)
+                leftChild.style.opacity = 0;
+  
+              if(rightChild != null)
+                rightChild.style.opacity = 0;
+            }
+
         });
       }
 
@@ -211,11 +324,12 @@ function initCarousel() {
 
         carousel.scrollLeft = targetScrollLeft;
 
-        prevPageX = e.pageX;
+        //prevPageX = e.pageX;
       }
 
 
       setInterval(()=>scaleMiddleImage(),10)
+      hideArrows()
     }
     
 
