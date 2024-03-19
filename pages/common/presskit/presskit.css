@@ -1,0 +1,57 @@
+.presskit {
+  background-color: #BC9585;
+}
+.presskit-container {
+  margin: 0 auto;
+  text-align: center;
+}
+.presskit-top {
+  width: 80%;
+  display: inline-block;
+}
+.presskit-line {
+  height: 5px;
+  background-color: #fff;
+  margin: 25px 0 50px 0;
+}
+.presskit-header {
+  margin-top: 60px;
+  color: #fff;
+  font-size: 96px;
+  margin-top: 120px;
+}
+.presskit-text {
+  color: #fff;
+  font-size: 32px;
+  margin-bottom: 130px;
+}
+.presskit-bottom {
+  padding-bottom: 150px;
+}
+.presskit-bottom h1 {
+  padding: 25px;
+}
+.presskit-bottom a {
+  text-decoration: none;
+  color: #fff;
+}
+.presskit-bottom img {
+  width: 60%;
+  height: auto;
+  max-width: 650px;
+}
+.presskit-icon {
+  transition: 0.4s;
+}
+.presskit-icon:hover {
+  opacity: 0.7;
+  scale: 1.05;
+}
+
+@media (max-width: 960px) {
+  .presskit-bottom h2 {
+    padding: 35px 0;
+  }
+}
+
+/*# sourceMappingURL=presskit.css.map */

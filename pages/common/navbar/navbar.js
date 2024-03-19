@@ -15,6 +15,9 @@ function initNavbar(){
     const contact = $('#contact');
     const games = $('#games');
     const about = $('#about');
+    const presskit = $('#presskit');
+
+    const videoContainers = document.querySelectorAll('#games-video');
 
     navLogo.on('click', function () {
         ShowMainPage()
@@ -25,7 +28,7 @@ function initNavbar(){
     });
 
     navPress.on('click', function () {
-        
+        ShowPressKit();
     });
 
     navGames.on('click', function () {
@@ -49,6 +52,23 @@ function initNavbar(){
         about.addClass('hidden')
         games.addClass('hidden')
         contact.addClass('hidden')
+        presskit.addClass('hidden') 
+        
+        navHome.parent().removeClass('active') 
+        navPress.parent().removeClass('active') 
+        navGames.parent().removeClass('active') 
+        navAbout.parent().removeClass('active') 
+        navContact.parent().removeClass('active') 
+
+        videoContainers.forEach(videoContainer => {
+            let iframes = videoContainer.querySelectorAll('iframe');
+
+            iframes.forEach(iframe => {
+                iframe.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                
+            })
+           
+        })
     }
 
     function ShowMainPage(){
@@ -60,21 +80,48 @@ function initNavbar(){
         about.addClass('hidden')
         games.addClass('hidden')
         contact.addClass('hidden')
+        presskit.addClass('hidden')
+
+        navHome.parent().addClass('active') 
+        navPress.parent().removeClass('active') 
+        navGames.parent().removeClass('active') 
+        navAbout.parent().removeClass('active') 
+        navContact.parent().removeClass('active') 
+
+        
+        videoContainers.forEach(videoContainer => {
+            let iframes = videoContainer.querySelectorAll('iframe');
+
+            iframes.forEach(iframe => {
+                iframe.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+                console.log(iframe)
+            })
+           
+        })
     }
 
     function ShowGames(){
         HidePages();
         games.removeClass('hidden')
+        navGames.parent().addClass('active') 
     }
     
     function ShowContact(){
         HidePages();
         contact.removeClass('hidden')
+        navContact.parent().addClass('active') 
     }
 
     function ShowAbout(){
         HidePages();
         about.removeClass('hidden')
+        navAbout.parent().addClass('active') 
+    }
+
+    function ShowPressKit(){
+        HidePages();
+        presskit.removeClass('hidden')
+        navPress.parent().addClass('active') 
     }
 }
  

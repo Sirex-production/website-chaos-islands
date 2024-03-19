@@ -6,7 +6,7 @@ function initCarousel() {
     var fan = $('#windmill-fan');
     let minSpeedDuration = 12;
     let maxSpeedDuration = 15;
-    //miliseconds
+ 
     let deltaTime = 10; 
     let step =  0.05;
     let animationInterval;
@@ -70,19 +70,30 @@ function initCarousel() {
       const arrowLeft = document.querySelector("#slider-prev");
       const arrowRight = document.querySelector("#slider-next");
       const images = document.querySelectorAll('.slider-soft-image');
-
+      const carouselText = document.querySelector('#carousel-text');
+      const messages = [
+        "",
+        "Userfriendly gameplay welcome to newcomers and deep enough for lovers of genre",
+        "Single player based gameplay allowes to pay attantion to actual game progression and story",
+        "Build your settlement! Defend it from demons! Uncover secrets of new world and collect artifacts!",
+        "Innovative system of level where number of levels depends on your intuition and engagement",
+        "Immerse yourself in a world of adventure and mystery, where every decision shapes the destiny of your village",
+        "Embark on a journey filled with perilous challenges and epic battles, as you uncover the secrets...",
+        "Grasp the beauty of Chaos Islands with different scenery styles",
+        ""
+    ]
       let isDragging = false, prevPageX, prevScrollLeft;
-
+      let rightDirection = true;
       //touch
       carousel.addEventListener("touchstart", function(e) {
-        return;
+        //return;
         isDragging = true;
         prevScrollLeft = carousel.scrollLeft;
         prevPageX = e.touches[0].pageX;  
       });
       
       carousel.addEventListener("touchmove", function(e) {
-        return;
+        //return;
         if (!isDragging)
             return;
     
@@ -94,9 +105,12 @@ function initCarousel() {
       });
 
       carousel.addEventListener("touchend", function(e) {
-        return;
+        //return;
         isDragging = false;
         carousel.classList.remove('dragging');
+        setTimeout(() => {
+          centerImage()
+      }, 400);
       });
 
       //mouse
@@ -210,9 +224,12 @@ function initCarousel() {
         const middleImageIndex = getMiddleImageIndex();
         const middleImage = images[middleImageIndex];
         const middleImageRect = middleImage.getBoundingClientRect();
-        const targetScrollLeft = carousel.scrollLeft - middleImageRect.width;
-        
+        const targetScrollLeft = carousel.scrollLeft - (window.innerWidth / 2 - middleImageRect.width / 2);
 
+      window.scrollTo({
+        left: targetScrollLeft,
+        behavior: 'smooth'  
+    });
         if(middleImageIndex == 1){
           return;
         }
@@ -220,20 +237,34 @@ function initCarousel() {
         setTimeout(() => {
             carousel.scrollLeft = targetScrollLeft;
         }, 200);
+
+        setTimeout(() => {
+          centerImage()
+      }, 800);
+      
       })  
 
       arrowRight.addEventListener("click", function(){
         const middleImageIndex = getMiddleImageIndex();
         const middleImage = images[middleImageIndex];
         const middleImageRect = middleImage.getBoundingClientRect();
-        const targetScrollLeft = carousel.scrollLeft + middleImageRect.width;
-    
+        const targetScrollLeft = carousel.scrollLeft + (window.innerWidth / 2 - middleImageRect.width / 2);
+
+     
+      window.scrollTo({
+        left: targetScrollLeft,
+        behavior: 'smooth'  
+    });
         if(middleImageIndex == images.length - 2){
           return;
         }
         setTimeout(() => {
             carousel.scrollLeft = targetScrollLeft;
         }, 200);
+
+        setTimeout(() => {
+          centerImage()
+      }, 800);
       })
 
 
@@ -257,10 +288,41 @@ function initCarousel() {
                 middleImageIndex = index;
             }
         });
-    
+        
         return middleImageIndex;
       } 
-  
+      function moveSliderRight() {
+
+        const middleImageIndex = getMiddleImageIndex();
+        const middleImage = images[middleImageIndex];
+        const middleImageRect = middleImage.getBoundingClientRect();
+        let targetScrollLeft = carousel.scrollLeft + (rightDirection? 1: -1)*(window.innerWidth / 2 - middleImageRect.width / 2);
+
+     
+      window.scrollTo({
+        left: targetScrollLeft,
+        behavior: 'smooth'  
+    });
+    
+        if(middleImageIndex >= images.length - 1){
+          rightDirection = false;
+          return;
+        
+       
+        }else if(middleImageIndex < 1){
+          rightDirection = true;
+          return;
+        }
+
+        setTimeout(() => {
+            carousel.scrollLeft = targetScrollLeft;
+        }, 200);
+
+        setTimeout(() => {
+          centerImage()
+      }, 900);
+      }
+
       function scaleMiddleImage() {
         const middleImageIndex = getMiddleImageIndex();
       
@@ -316,20 +378,61 @@ function initCarousel() {
         });
       }
 
-      function centerImage(){
-        const middleImageIndex = getMiddleImageIndex();
-        const middleImage = images[middleImageIndex];
-        const middleImageRect = middleImage.getBoundingClientRect();
-        const targetScrollLeft = carousel.scrollLeft + middleImageRect.left - (carousel.offsetWidth / 2) + (middleImageRect.width / 2);
+      function animateTextTransition(message){
 
+        if(message == carouselText.textContent )
+          return;
+
+        setTimeout(()=>{
+          carouselText.style.opacity = 0.1
+        }, 50)
+
+        setTimeout(()=>{
+          carouselText.textContent = message;
+          carouselText.style.opacity = 1
+        }, 300)
+
+        
+      }
+      function centerImage(){
+
+        let middleImageIndex = getMiddleImageIndex();
+        let middleImage = images[middleImageIndex];
+        let middleImageRect = middleImage.getBoundingClientRect();
+        let targetScrollLeft = carousel.scrollLeft + middleImageRect.left - (window.innerWidth / 2) + (middleImageRect.width / 2);
         carousel.scrollLeft = targetScrollLeft;
 
-        //prevPageX = e.pageX;
+        window.scrollTo({
+          left: targetScrollLeft,
+          behavior: 'smooth'  
+      });
+
+       let message = messages[middleImageIndex];
+       animateTextTransition(message)
+       
       }
 
+      function startInMiddle(){
+        let middleImageIndex = 4;
+        let middleImage = images[middleImageIndex];
+        let middleImageRect = middleImage.getBoundingClientRect();
+        let targetScrollLeft = carousel.scrollLeft + middleImageRect.left - (window.innerWidth / 2) + (middleImageRect.width / 2);
+        carousel.scrollLeft = targetScrollLeft;
+
+        window.scrollTo({
+          left: targetScrollLeft,
+          behavior: 'smooth'  
+      });
+      }
 
       setInterval(()=>scaleMiddleImage(),10)
       hideArrows()
+      setInterval(moveSliderRight, 10000);
+      window.addEventListener('resize', function(event) {
+        
+        centerImage()
+    });
+    startInMiddle()
     }
     
 

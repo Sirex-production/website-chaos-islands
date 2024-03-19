@@ -44,6 +44,7 @@ function initNavbar() {
         
         [jumbotron, media, carousel, gallery, about, games, contact].forEach(page => {
             page.addClass('hidden');
+            page.parent().removeClass('active') 
         });
     }
 

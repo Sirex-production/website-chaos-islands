@@ -7,7 +7,7 @@
         let animationInterval2;
     
         function onAnimationInit(stringPath) {
-            animationInterval = setInterval(()=>onAnimationStart(stringPath), 10);
+            animationInterval = setInterval(()=> onAnimationStart(stringPath), 10);
         }
  
         function onAnimationStart(stringPath) {
@@ -16,7 +16,7 @@
             if (currentOpacity < 0.2) {
                 hoverElem.src = stringPath;
                 clearInterval(animationInterval);
-                animationInterval2 = setInterval(()=>onAnimationEnd(stringPath), 10);
+                animationInterval2 = setInterval(()=> onAnimationEnd(stringPath), 10);
                 return;
             }
     
@@ -41,7 +41,7 @@
             clearInterval(animationInterval);
             clearInterval(animationInterval2);
     
-            hoverElem.removeEventListener('mouseleave', ()=>onAnimationInit(r2));
+            hoverElem.removeEventListener('mouseleave', ()=> onAnimationInit(r2));
     
             animationInterval = setInterval(()=>onAnimationStart(r2), 10);
 
@@ -52,17 +52,17 @@
             clearInterval(animationInterval);
             clearInterval(animationInterval2);
     
-            hoverElem.removeEventListener('mouseenter', ()=>onAnimationInit(r1));
+            hoverElem.removeEventListener('mouseenter', ()=> onAnimationInit(r1));
     
             animationInterval = setInterval(()=>onAnimationStart(r1), 10);
         });
     }
 
-    doAnimateHover("steam", "resource/icons/steam_c.png", "resource/icons/steam.png");
-    doAnimateHover("discord", "resource/icons/discord_color.png", "resource/icons/discord-logo-white.png");
+    doAnimateHover("steam", "resource/icons/steam_black.png", "resource/icons/steam.png");
+    doAnimateHover("discord", "resource/icons/discord_black.png", "resource/icons/discord-logo-white.png");
     doAnimateHover("x", "resource/icons/x_c.png", "resource/icons/X_logo_2023_(white).png");
-    doAnimateHover("tiktok", "resource/icons/tiktok_color.png", "resource/icons/tiktok.png");
-    doAnimateHover("youtube", "resource/icons/yotube_color.png", "resource/icons/yotube_white.png");
+    doAnimateHover("tiktok", "resource/icons/tiktok_black.png", "resource/icons/tiktok.png");
+    doAnimateHover("youtube", "resource/icons/yotube_black.png", "resource/icons/yotube_white.png");
  
  }
 

@@ -12,7 +12,7 @@
   background-color: #BC9585;
 }
 .carousel-bottom {
-  height: 300px;
+  min-height: 300px;
   background-color: #BC9585;
   padding-top: 75px;
   position: relative;
@@ -44,7 +44,7 @@
 }
 .carousel-wrapper {
   width: 95%;
-  margin : auto;
+  margin: auto;
 }
 .carousel-label .container {
   max-width: 500px;
@@ -163,15 +163,16 @@
   opacity: 0;
 }
 .carousel .slider-arrow:last-child {
-  right: 25px;
+  right: 0px;
 }
 .carousel .slider-arrow:first-child {
-  left: 25px;
+  left: 0px;
 }
 .carousel .slider-wrapper {
   white-space: nowrap;
   overflow: hidden;
   scroll-behavior: smooth;
+  margin: auto;
 }
 .carousel .slider .soft-image {
   display: inline-block;
@@ -229,6 +230,10 @@
   height: auto;
 }
 
+#carousel-text {
+  transition: all 0.3s ease;
+}
+
 @keyframes rotate-wheel {
   from {
     transform: rotateZ(0deg);
@@ -237,7 +242,26 @@
     transform: rotateZ(360deg);
   }
 }
+@media (max-width: 1625px) {
+  .carousel-wrapper {
+    margin: auto;
+  }
+  .carousel-wrapper .container {
+    width: 100%;
+    max-width: 80%;
+    text-align: center;
+  }
+  .carousel-wrapper .carousel-main-image {
+    margin: auto;
+  }
+  .carousel .circular-underline {
+    opacity: 0;
+  }
+}
 @media (max-width: 960px) {
+  .slider-arrow {
+    display: none;
+  }
   .slider .soft-image img.overlay-img {
     display: none;
   }
@@ -259,6 +283,9 @@
   .carousel-title p {
     font-size: 32px;
     margin: 50px auto 75px;
+  }
+  .carousel-bottom .dotted-text .circle {
+    display: none;
   }
   .carousel-label .row {
     width: 90%;

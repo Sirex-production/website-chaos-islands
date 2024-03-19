@@ -1,7 +1,7 @@
  
 $(function () {
 
-    var pagesToLoad = 9; 
+    var pagesToLoad = 10; 
     var pagesLoaded = 0; 
 
 
@@ -48,6 +48,17 @@ $(function () {
         checkAllPagesLoaded();
     });
 
+
+    var presskit = $("#presskit").load("./pages/common/presskit/presskit.html",function(response, status, xhr){
+
+        // if (status == "success") {
+        //     initPresskit();
+        // }else if (status == "error"){
+        //     console.log(`Error loading content - press kit: ${xhr.status} ${xhr.statusText}`);
+        // }
+
+        checkAllPagesLoaded();
+    });
 
     var media = $("#media").load("./pages/common/media/media.html", function(response, status, xhr){
         
@@ -109,4 +120,9 @@ $(function () {
     about.addClass("hidden");
     contact.addClass("hidden");
     games.addClass("hidden");
+    presskit.addClass("hidden");
 });
+
+function openLink(url) {
+    window.open(url, '_blank');
+}

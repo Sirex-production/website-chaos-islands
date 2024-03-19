@@ -1,8 +1,15 @@
 @use './../../../variables' as variables
 
 .navbar
-    position : -webkit-sticky
-    position : sticky
+
+    &-fake
+        height : 110px 
+        background-color : variables.$navbar-color
+    //position : -webkit-sticky
+    //position : sticky
+    position : fixed
+    width : 100%
+    opacity : 0.9
     top : 0
     z-index : 1000
     padding : 0 
@@ -18,10 +25,10 @@
             padding : 10px 15px
         
         & .nav-item.active 
-            background-color : #4B382E  
+            background-color : variables.$navbar-color
 
             & .nav-link
-                color : #fff 
+                color : background-color : variables.$main-font-color 
                 border-radius : 3px
 
     &-toggler

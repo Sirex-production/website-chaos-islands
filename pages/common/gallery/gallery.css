@@ -4,9 +4,9 @@
 .gallery-header {
   padding-top: 50px;
 }
-.gallery-top {
+/* .gallery-top {
   margin-top: 50px;
-}
+} */
 .gallery-item h2 {
   font-size: 40px;
   color: #fff;
@@ -39,7 +39,7 @@
   background-color: #fff;
 }
 .gallery-header {
-  margin-top: 60px;
+  /* margin-top: 60px; */
   color: #fff;
   font-size: 96px;
 }
@@ -64,6 +64,7 @@
 .soft-image video {
   max-width: 100%;
   height: auto;
+  transform : scale(1.035);
 }
 
 .circular-button {

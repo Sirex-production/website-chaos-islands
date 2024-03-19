@@ -28,4 +28,7 @@ function initGallery(){
             e.play();
         });
     });
+
+    
 }
+

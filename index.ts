@@ -1,7 +1,7 @@
  
 $(() => {
     
-    let pagesToLoad = 9; 
+    let pagesToLoad = 10; 
     let pagesLoaded = 0; 
 
     const navbar = $("#navbar").load("./pages/common/navbar/navbar.html",function(response, status, xhr){
@@ -56,6 +56,16 @@ $(() => {
         checkAllPagesLoaded();
     });
 
+    var presskit = $("#presskit").load("./pages/common/presskit/presskit.html",function(response, status, xhr){
+
+        if (status == "success") {
+            initPresskit();
+        }else if (status == "error"){
+            console.log(`Error loading content - press kit: ${xhr.status} ${xhr.statusText}`);
+        }
+
+        checkAllPagesLoaded();
+    });
 
     const media = $("#media").load("./pages/common/media/media.html", function(response, status, xhr){
         
@@ -102,10 +112,14 @@ $(() => {
       
         }
     }
-    //about.addClass("hidden");
-    //contact.addClass("hidden");
-});
 
-function initMedia() {
-    throw new Error("Function not implemented.");
+    about.addClass("hidden");
+    contact.addClass("hidden");
+    games.addClass("hidden");
+    presskit.addClass("hidden");
+});
+ 
+
+function openLink(url) : void {
+    window.open(url, '_blank');
 }
