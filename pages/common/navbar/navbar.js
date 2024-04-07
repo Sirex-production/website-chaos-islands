@@ -63,11 +63,17 @@ function initNavbar(){
         videoContainers.forEach(videoContainer => {
             let iframes = videoContainer.querySelectorAll('iframe');
 
-            iframes.forEach(iframe => {
-                iframe.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-                
-            })
+            // iframes.forEach(iframe => {
+            //     iframe.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+            // })
            
+            const videoContainers = document.querySelector('#games-video');
+            let videoElement = videoContainer.querySelector('iframe');
+
+            if(videoElement != null){
+                videoElement.parentNode.removeChild(videoElement)
+                videoElement = null;
+            }
         })
     }
 
@@ -92,10 +98,18 @@ function initNavbar(){
         videoContainers.forEach(videoContainer => {
             let iframes = videoContainer.querySelectorAll('iframe');
 
-            iframes.forEach(iframe => {
-                iframe.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
-                console.log(iframe)
-            })
+            // iframes.forEach(iframe => {
+            //     iframe.contentWindow.postMessage('{"event":"command","func":"' + 'pauseVideo' + '","args":""}', '*');
+            // })
+
+
+            const videoContainers = document.querySelector('#games-video');
+            let videoElement = videoContainer.querySelector('iframe');
+
+            if(videoElement != null){
+                videoElement.parentNode.removeChild(videoElement)
+                videoElement = null;
+            }
            
         })
     }

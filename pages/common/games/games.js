@@ -3,23 +3,30 @@ function initGames(){
 
     videoContainers.forEach(videoContainer => {
         const videoId =  'ZotSsxpzass'
-        let videoElement = null;
+        let videoElementTemplate = null;
+     
 
         videoContainer.addEventListener('mouseenter', function() {
-            
-            if (!videoElement) {
-                videoElement = document.createElement('iframe');
-                videoElement.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&loop=1&controls=1&enablejsapi=1&modestbranding=1&rel=0&showinfo=0`);
-                videoElement.setAttribute('frameborder', '0');
-                videoElement.setAttribute('allowfullscreen', 'true');
-                videoElement.setAttribute('allow', 'autoplay');
-                videoElement.style.width = '100%';
-                videoElement.style.height = '100%';
-                videoContainer.appendChild(videoElement);
+            let videoElement = videoContainer.querySelector('iframe');
+
+            videoElementTemplate = document.createElement('iframe');
+            videoElementTemplate.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=0&loop=1&controls=1&enablejsapi=1&modestbranding=1&rel=0&showinfo=0`);
+            videoElementTemplate.setAttribute('frameborder', '0');
+            videoElementTemplate.setAttribute('allowfullscreen', 'true');
+            videoElementTemplate.setAttribute('allow', 'autoplay');
+            videoElementTemplate.style.width = '100%';
+            videoElementTemplate.style.height = '100%';
+
+
+            if (videoElement == null) {
+
+                videoContainer.appendChild(videoElementTemplate);
             }
         });
 
         videoContainer.addEventListener('mouseleave', function() {
+            let videoElement = videoContainer.querySelector('iframe');
+            
             if (videoElement) {
 
 
